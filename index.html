@@ -4,1154 +4,452 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yash Bhake - AI Researcher & Software Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #f59e0b;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-        }
+        /* Custom Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.5s ease;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        /* Theme Colors */
+        :root {
+            --primary-color: #f97316; /* Orange 500 */
+            --secondary-color: #c2410c; /* Orange 700 */
+            --accent-color: #facc15; /* Yellow 400 */
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #fff7ed; /* Orange 50 */
+            --white: #ffffff;
+            --border-color: #fdba74; /* Orange 300 */
+        }
+
+        /* Dynamic Backgrounds */
+        .bg-theme-home {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #fff1e5 100%);
+        }
+        .bg-theme-ml {
+             background: radial-gradient(circle, rgba(255,247,237,1) 0%, rgba(253,230,201,0.8) 100%),
+             url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fb923c' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .bg-theme-audio {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #fff1e5 100%),
+            url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.324 12 50 12c-10.413 0-16.832 1.373-26.66 5.163l-1.767.662c-2.475.923-4.664 1.734-6.573 2.408v2.248a44.662 44.662 0 0 1-1.184-2.453l-.22-.486-1.183-2.604a3.973 3.973 0 0 1-.299-.662c-.133-.296-.266-.593-.4-.889h.889l.167.334.333.666.167.334.167.334a7.5 7.5 0 0 0 .5.999h1.166zm-1.102-3.953h.22l.22-.485.22-.486.22-.485a3.924 3.924 0 0 0 .3-1.485l.022-1.02a4.42 4.42 0 0 0-.11-.99c-.043-.22-.087-.44-.132-.66h-.22c.044.22.088.44.132.66.044.22.088.44.11.66l.044.885a2.2 2.2 0 0 1-.132.66c-.022.11-.044.22-.066.33l-.154.331-.154.331-.154.33-.154.331h.22zm-1.32-3.3h.22l.176-.331.176-.331.176-.331c.044-.088.088-.176.132-.264a2.2 2.2 0 0 0 .132-.66c.022-.22.044-.44.044-.66s-.022-.44-.044-.66a2.2 2.2 0 0 0-.132-.66c-.044-.088-.088-.176-.132-.264l-.176-.331-.176-.331L18.6 4.4h-.22l.176.331.176.33.176.331.176.332a2.2 2.2 0 0 1 .132.66c.022.22.044.44.044.66s-.022.44-.044.66a2.2 2.2 0 0 1-.132.66l-.176.331-.176.33-.176.331-.176.332h.22zm25.5-3.088c-.357.13-.72.264-1.088.402l-1.768.661C33.64 13.347 39.647 12 50 12c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 9.278 60.324 8 50 8c-10.413 0-16.832 1.373-26.66 5.163l-1.767.662c-2.475.923-4.664 1.734-6.573 2.408v2.248a44.662 44.662 0 0 1-1.184-2.453l-.22-.486-1.183-2.604a3.973 3.973 0 0 1-.299-.662c-.133-.296-.266-.593-.4-.889h.889l.167.334.333.666.167.334.167.334a7.5 7.5 0 0 0 .5.999h1.166l.11-2.453h-1.166a7.525 7.525 0 0 0-.5-.999L18.8 8.8h-.889c.133.296.266.593.4.889.088.197.176.393.299.662l1.183 2.604.22.486c.154.34.308.68.462 1.02h-6.225c1.909-.674 4.098-1.485 6.573-2.408l1.767-.662C33.168 9.373 39.587 8 50 8c10.324 0 15.888 1.278 25.422 5.072C79.861 14.809 82.49 15.77 85 16.5h.444c-.044-.22-.088-.44-.132-.66a4.42 4.42 0 0 0-.11-.99l-.022-1.02a3.924 3.924 0 0 0 .3-1.485l.22-.485.22-.486.22-.485h.22l-.22.485-.22.486-.22.485a3.924 3.924 0 0 1-.3 1.485l-.022 1.02a4.42 4.42 0 0 1 .11.99c.043.22.087.44.132.66h.22c-.044-.22-.088-.44-.132-.66a4.42 4.42 0 0 1-.11-.99l-.022-1.02a3.924 3.924 0 0 1 .3-1.485l.22-.485.22-.486.22-.485h.22l-.22.485-.22.486-.22.485a3.924 3.924 0 0 0-.3 1.485l-.022 1.02a4.42 4.42 0 0 0 .11.99c.043.22.087.44.132.66zm-3.088-3.953l-.154.331-.154.33-.154.331-.154.33h.22l.154-.33.154-.33.154-.33.154-.331a2.2 2.2 0 0 1 .132-.66c.022-.22.044-.44.044-.66s-.022-.44-.044-.66a2.2 2.2 0 0 1-.132-.66l-.154-.33-.154-.33-.154-.33-.154-.331h-.22l.154.33.154.33.154.33.154.332a2.2 2.2 0 0 0 .132.66c.022.22.044.44.044.66s-.022.44-.044-.66a2.2 2.2 0 0 0-.132-.66zm-50.809-5.163c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 1.347 39.647 0 50 0c10.271 0 15.362 1.222 24.629 4.928C75.584 5.31 76.5 5.667 77.378 6h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888-.722 60.324-2 50-2c-10.413 0-16.832 1.373-26.66 5.163l-1.767.662c-2.475.923-4.664 1.734-6.573 2.408V3.084a44.662 44.662 0 0 1-1.184-2.453L13.6 0h-1.183a3.973 3.973 0 0 1-.299-.662c-.133-.296-.266-.593-.4-.889h.889l.167.334.333.666.167.334.167.334a7.5 7.5 0 0 0 .5.999h1.166L15.42.047h-1.166a7.525 7.525 0 0 0-.5-.999L12.866-2h-.889c.133.296.266.593.4.889.088.197.176.393.299.662l1.183 2.604.22.486c.154.34.308.68.462 1.02H8.333c1.909-.674 4.098-1.485 6.573-2.408l1.767-.662C26.168-1.627 32.587-3 43-3c10.324 0 15.888 1.278 25.422 5.072C72.861 3.809 75.49 4.77 78 5.5h.444c-.044-.22-.088-.44-.132-.66a4.42 4.42 0 0 0-.11-.99l-.022-1.02a3.924 3.924 0 0 0 .3-1.485l.22-.485L78.866 0h.22l-.22.485a3.924 3.924 0 0 1-.3 1.485l-.022 1.02a4.42 4.42 0 0 1 .11.99c.043.22.087.44.132.66h.22c-.044-.22-.088-.44-.132-.66a4.42 4.42 0 0 0-.11-.99l-.022-1.02a3.924 3.924 0 0 0 .3-1.485l.22-.485L79.755 0h.22l-.22.485a3.924 3.924 0 0 1-.3 1.485l-.022 1.02a4.42 4.42 0 0 1 .11.99c.043.22.087.44.132.66h.22l.11-2.453h-.22a2.2 2.2 0 0 0-.132-.66c-.022-.22-.044-.44-.044-.66s.022-.44.044-.66a2.2 2.2 0 0 0 .132-.66L80.422 0h.22l-.176.331a2.2 2.2 0 0 1-.132.66c-.022.22-.044.44-.044.66s.022.44.044.66a2.2 2.2 0 0 1 .132.66L80.6 3.084h.22l-.154-.331a2.2 2.2 0 0 0-.132-.66c-.022-.22-.044-.44-.044-.66s.022-.44.044-.66a2.2 2.2 0 0 0 .132-.66L80.822 0h.22l-.176.331a2.2 2.2 0 0 1-.132.66c-.022.22-.044.44-.044.66s.022.44.044.66a2.2 2.2 0 0 1 .132.66l.176.331.176.331.176.331V0h.22v.889a.999.999 0 0 0-.176-.331L81.266 0h.22l.176.331c.044.088.088.176.132.264a2.2 2.2 0 0 0 .132.66c.022.22.044.44.044.66s-.022.44-.044-.66a2.2 2.2 0 0 0-.132-.66c-.044-.088-.088-.176-.132-.264L81.711 0h.22l.176.331.176.331.176.331h.444l.22-.485-.22-.485h.22l.22.485-.22.485h.666l.22-.485-.22-.485h.22l.22.485-.22.485h.889l-.11-2.453h.22l.11 2.453h.889l.11-2.453h.22l-.11 2.453h.666l-.22-.485.22-.485h.22l-.22.485.22-.485h.444l.176-.331L87.533 0h.22l-.176.331.176.331h.22l-.176-.331.176-.331h.22l.176.331-.176.331h.22l-.176-.331.176-.331h.444l-.176.331.176.331h.22l-.176-.331.176.331h.22l.176-.331L89.755 0h.22l-.176.331.176.331h.22l.176-.331-.176.331h.22l.176-.331-.176.331h.666l.176-.331L91.6 0h.22l-.176.331.176.331h.22l.176-.331-.176.331h.22l.176-.331-.176.331h.22l.176-.331L93.044 0h.22l-.176.331.176.331h.22l.176-.331-.176.331h.444c.022-.11.044-.22.066-.33l.154-.331.154-.33.154-.331.154-.331h-.22l-.154.33-.154.33-.154.33-.154.331a2.2 2.2 0 0 1-.132.66c-.022.22-.044.44-.044.66s.022.44.044.66a2.2 2.2 0 0 1 .132.66l.154.33.154.33.154.33.154.331h.22l-.154-.33-.154-.33-.154-.33-.154-.33a2.2 2.2 0 0 0-.132-.66c-.022-.22-.044-.44-.044-.66s.022.44.044.66a2.2 2.2 0 0 0 .132.66l.154.33.154.33.154.33.154.331h.22l-.154-.33-.154-.33-.154-.33-.154-.33a2.2 2.2 0 0 1-.132-.66c-.022-.22-.044-.44-.044-.66s.022.44.044.66a2.2 2.2 0 0 1 .132.66l.154.33.154.33.154.33.154.331h.444l-.22.485.22.485h.22l-.22-.485.22-.485h.22l-.22.485.22.485h.22l.22-.485L100 0h-2.2z' fill='%23ea580c' fill-opacity='0.1' fill-rule='nonzero'/%3E%3C/svg%3E");
         }
 
         /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
+        .nav-link {
+            transition: color 0.3s ease, border-color 0.3s ease;
+            border-bottom: 2px solid transparent;
         }
 
-        nav.scrolled {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+        .nav-link.active, .nav-link:hover {
             color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        /* General Styling */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .page.active {
+            display: block;
         }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 8rem 0 6rem;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-content .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-content .description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
+        
         .btn-primary {
-            background: var(--accent-color);
+            background-color: var(--primary-color);
             color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
         }
 
         .btn-outline {
-            border-color: white;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-outline:hover {
+            background-color: var(--primary-color);
             color: white;
         }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-dark);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 4rem;
-            font-size: 1.1rem;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .profile-placeholder {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            font-size: 4rem;
-            color: white;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .achievements {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .achievement {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--bg-light);
-            border-radius: 10px;
-        }
-
-        .achievement .number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        /* Publications Section */
-        .publications {
-            background: var(--bg-light);
-        }
-
-        .publication-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .publication-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .publication-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .publication-meta {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .publication-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
+        
         .tag {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            background-color: var(--bg-light);
+            color: var(--secondary-color);
+            border: 1px solid var(--border-color);
         }
 
-        /* Experience Section */
-        .experience-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            filter: grayscale(100%) opacity(60%);
+            transition: all 0.3s ease;
         }
 
-        .experience-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid var(--primary-color);
+        .logo-container:hover .logo-icon {
+             filter: grayscale(0%) opacity(100%);
         }
 
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .experience-title {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
-        .experience-company {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-duration {
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .experience-description {
-            margin-bottom: 1rem;
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        .experience-highlights {
-            list-style: none;
-            padding: 0;
-        }
-
-        .experience-highlights li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-dark);
-        }
-
-        .experience-highlights li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Projects Section */
-        .projects {
-            background: var(--bg-light);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-meta {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-description {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .project-highlights {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1rem;
-        }
-
-        .project-highlights li {
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-            font-size: 0.9rem;
-        }
-
-        .project-highlights li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .skill-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: var(--bg-light);
-            color: var(--text-dark);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            border: 1px solid #e5e7eb;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--bg-light);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .contact-item h4 {
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        .contact-item a {
-            color: var(--text-light);
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
     </style>
 </head>
-<body>
-    <!-- Tab Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">Yash Bhake</div>
-                <ul class="nav-links" id="tab-links">
-                    <li><a href="#" data-tab="home">Home + About</a></li>
-                    <li><a href="#" data-tab="publications">Publications</a></li>
-                    <li><a href="#" data-tab="experience">Experience</a></li>
-                    <li><a href="#" data-tab="projects">Projects</a></li>
-                    <li><a href="#" data-tab="sidequests">Side Quests</a></li>
-                    <li><a href="#" data-tab="contact">Contact</a></li>
-                </ul>
+<body class="bg-theme-home">
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav id="navbar" class="sticky top-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
+            <div class="container mx-auto px-6 py-3">
+                <div class="flex justify-between items-center">
+                    <div class="text-2xl font-bold" style="color: var(--primary-color);">Yash Bhake</div>
+                    <ul class="hidden md:flex items-center space-x-8">
+                        <li><a href="#" class="nav-link active font-medium pb-1" onclick="showPage('home', this, 'bg-theme-home')">Home</a></li>
+                        <li><a href="#" class="nav-link font-medium pb-1" onclick="showPage('about', this, 'bg-theme-ml')">About</a></li>
+                        <li><a href="#" class="nav-link font-medium pb-1" onclick="showPage('publications', this, 'bg-theme-audio')">Publications</a></li>
+                        <li><a href="#" class="nav-link font-medium pb-1" onclick="showPage('experience', this, 'bg-theme-ml')">Experience</a></li>
+                        <li><a href="#" class="nav-link font-medium pb-1" onclick="showPage('projects', this, 'bg-theme-ml')">Projects</a></li>
+                        <li><a href="#" class="nav-link font-medium pb-1" onclick="showPage('side-quests', this, 'bg-theme-home')">Side Quests</a></li>
+                        <li><a href="#" class="nav-link font-medium pb-1" onclick="showPage('contact', this, 'bg-theme-home')">Contact</a></li>
+                    </ul>
+                    <div class="md:hidden">
+                        <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                            <i class="fas fa-bars text-2xl" style="color: var(--primary-color);"></i>
+                        </button>
+                    </div>
+                </div>
+                 <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden mt-3 space-y-2">
+                    <a href="#" class="block py-2 px-4 text-sm hover:bg-orange-50 rounded" onclick="showPage('home', this, 'bg-theme-home'); closeMenu();">Home</a>
+                    <a href="#" class="block py-2 px-4 text-sm hover:bg-orange-50 rounded" onclick="showPage('about', this, 'bg-theme-ml'); closeMenu();">About</a>
+                    <a href="#" class="block py-2 px-4 text-sm hover:bg-orange-50 rounded" onclick="showPage('publications', this, 'bg-theme-audio'); closeMenu();">Publications</a>
+                    <a href="#" class="block py-2 px-4 text-sm hover:bg-orange-50 rounded" onclick="showPage('experience', this, 'bg-theme-ml'); closeMenu();">Experience</a>
+                    <a href="#" class="block py-2 px-4 text-sm hover:bg-orange-50 rounded" onclick="showPage('projects', this, 'bg-theme-ml'); closeMenu();">Projects</a>
+                    <a href="#" class="block py-2 px-4 text-sm hover:bg-orange-50 rounded" onclick="showPage('side-quests', this, 'bg-theme-home'); closeMenu();">Side Quests</a>
+                    <a href="#" class="block py-2 px-4 text-sm hover:bg-orange-50 rounded" onclick="showPage('contact', this, 'bg-theme-home'); closeMenu();">Contact</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
+        <!-- Page Content -->
+        <main class="flex-grow container mx-auto px-6 py-12">
 
-    <!-- Tabbed Content Sections -->
-    <div id="tab-content">
-        <section id="tab-home" class="tab-section" style="background: linear-gradient(120deg, #2563eb 0%, #f59e0b 100%); min-height: 80vh;">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Yash Bhake</h1>
-                    <p class="subtitle">AI Researcher & Software Engineer</p>
-                    <p class="description">
-                        Fourth-year student at IIT Bombay specializing in Artificial Intelligence, Data Science, and Music Information Retrieval.<br>
-                        Published researcher with a passion for computational modeling and generative AI applications.
-                    </p>
-                </div>
-                <div class="about-grid">
-                    <div class="about-image">
-                        <div class="profile-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <h3>Bridging AI and Creative Expression</h3>
-                        <p>
-                            I'm a fourth-year student at IIT Bombay pursuing a Minor Degree in Artificial Intelligence and Data Science under C-MInDS.<br>
-                            My research focuses on computational modeling of expressiveness in Hindustani vocal music, combining my passion for music with cutting-edge AI techniques.
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="flex flex-col md:flex-row items-center min-h-[70vh]">
+                     <div class="md:w-3/5 text-center md:text-left">
+                        <h1 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">Yash Bhake</h1>
+                        <p class="text-xl md:text-2xl mt-4 font-medium" style="color: var(--primary-color);">AI Researcher & Software Engineer</p>
+                        <p class="mt-6 text-lg text-gray-600 max-w-xl">
+                            Fourth-year student at IIT Bombay specializing in Artificial Intelligence, Music Information Retrieval, and building robust software solutions.
                         </p>
-                        <p>
-                            With publications in top-tier conferences like ISMIR and ICASSP, I've contributed to the field of Music Information Retrieval through innovative approaches to generative modeling and expressive timing analysis.<br>
-                            My work has been recognized with the Undergraduate Research Award and author grants.
+                        <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                            <a href="#" onclick="showPage('projects', document.querySelector('[onclick*=\'projects\']'), 'bg-theme-ml')" class="btn-primary font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">View Projects</a>
+                            <a href="#" onclick="showPage('contact', document.querySelector('[onclick*=\'contact\']'), 'bg-theme-home')" class="btn-outline font-semibold py-3 px-8 rounded-full border-2 transform hover:scale-105 transition-transform duration-300">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="md:w-2/5 mt-10 md:mt-0 flex justify-center">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center bg-gradient-to-br from-yellow-300 to-orange-500 shadow-2xl">
+                             <i class="fas fa-brain text-white text-8xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Page -->
+            <section id="about" class="page">
+                <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-color);">About Me</h2>
+                 <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3 text-center">
+                         <div class="w-60 h-60 mx-auto rounded-full bg-gradient-to-br from-yellow-300 to-orange-500 flex items-center justify-center">
+                            <i class="fas fa-user text-white text-7xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-3xl font-bold mb-4" style="color: var(--secondary-color);">Bridging AI and Creative Expression</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            I'm a fourth-year student at IIT Bombay pursuing a Minor Degree in Artificial Intelligence and Data Science. 
+                            My research focuses on the computational modeling of expressiveness in Hindustani vocal music, combining my passion for music with cutting-edge AI techniques.
                         </p>
-                        <p>
-                            Beyond research, I have industry experience at Deutsche Bank where I developed production-ready software solutions, and I'm actively involved in mentoring and teaching roles at IIT Bombay.
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            With publications in top-tier conferences like ISMIR and ICASSP, I've contributed to the field of Music Information Retrieval through innovative approaches to generative modeling and expressive timing analysis. 
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                           Beyond research, I have industry experience at Deutsche Bank where I developed production-ready software solutions. I'm passionate about leveraging technology to solve complex problems and create meaningful impact.
                         </p>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="tab-publications" class="tab-section" style="display:none; background: linear-gradient(120deg, #1e40af 0%, #f8fafc 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Publications</h2>
-                <p class="section-subtitle">Research contributions in Music Information Retrieval and AI</p>
-                <div class="publication-card">
-                    <h4>
-                        <i class="fas fa-music"></i> Melodic And Metrical Elements of Expressiveness in Hindustani Vocal Music
-                    </h4>
-                    <p class="publication-meta">Y. Bhake, A. Anand and P. Rao | ISMIR 2025, Daejeon, Korea <i class="fas fa-book"></i></p>
-                    <p>Research focused on generative modeling in expressive classical music, exploring computational approaches to capture and model melodic and metrical expressiveness in Hindustani vocal traditions.</p>
-                    <div class="publication-tags">
-                        <span class="tag"><i class="fas fa-brain"></i> Generative Modeling</span>
-                        <span class="tag"><i class="fas fa-music"></i> Music Information Retrieval</span>
-                        <span class="tag"><i class="fas fa-award"></i> Author Grants</span>
-                    </div>
-                </div>
-                <div class="publication-card">
-                    <h4>
-                        <i class="fas fa-stopwatch"></i> Expressive Timing in Hindustani Vocal Music
-                    </h4>
-                    <p class="publication-meta">Y. Bhake and P. Rao | WIMAGA, ICASSP 2025, Hyderabad <i class="fas fa-book"></i></p>
-                    <p>Investigation into quantitative methods for capturing expressive timing in classical Indian music, with applications to computational musicology and generative modeling of musical syncopation.</p>
-                    <div class="publication-tags">
-                        <span class="tag"><i class="fas fa-stopwatch"></i> Expressive Timing</span>
-                        <span class="tag"><i class="fas fa-music"></i> Computational Musicology</span>
-                        <span class="tag"><i class="fas fa-microchip"></i> ICASSP</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="tab-experience" class="tab-section" style="display:none; background: linear-gradient(120deg, #f59e0b 0%, #2563eb 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="experience-timeline">
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-title">Software Engineering Intern</div>
-                                <div class="experience-company">Deutsche Bank - Cash and Securities Portfolio</div>
-                            </div>
-                            <div class="experience-duration">May'25 - Jul'25</div>
-                        </div>
-                        <p class="experience-description">Received a Pre-Placement Offer and Letter of Recommendation for exceptional performance and consistent output during the internship</p>
-                        <ul class="experience-highlights">
-                            <li>Engineered and delivered production-ready end-to-end user-preferences functionality refining user experience</li>
-                            <li>Developed full-stack features using React.js, Java Spring Boot, GraphQL, and PostgreSQL learning them on-site</li>
-                            <li>Slashed GCP elevated access request time from 1 hour to 2 minutes by automating the pipeline with Python utility</li>
-                        </ul>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-title">Design Intern</div>
-                                <div class="experience-company">NanoSniff Technologies Pvt. Ltd.</div>
-                            </div>
-                            <div class="experience-duration">May'24 - Jul'24</div>
-                        </div>
-                        <p class="experience-description">MEMS fabrication and product R&D organization developing smart electronics through innovative product design</p>
-                        <ul class="experience-highlights">
-                            <li>Designed a device prototype for generating vapor molecules over a combustion sensor for detecting explosives</li>
-                            <li>Optimized the heating coil orientation and geometry (nested helix) maximizing heating as per the specifications</li>
-                        </ul>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-title">Research Assistant</div>
-                                <div class="experience-company">DAPLAB - Prof. Preeti Rao</div>
-                            </div>
-                            <div class="experience-duration">May'24 - Present</div>
-                        </div>
-                        <p class="experience-description">Computational modeling of elements of expressiveness in Indian vocal music for generative applications and analysis</p>
-                        <ul class="experience-highlights">
-                            <li>Developed a semi-automatic syllable annotation pipeline using Whisper, VAD and a Forced Alignment model</li>
-                            <li>Devised spectral band-energy (F1 - 0.80) and ΔMFCC (F1 - 0.73) syllable onset detection models</li>
-                            <li>Applied Word2vec & text match (96% acc.) to measure syllable misalignment for expression analysis</li>
-                            <li>Generated new variations capturing expressive timing using GMM sampling on processed data</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="tab-projects" class="tab-section" style="display:none; background: linear-gradient(120deg, #6b7280 0%, #f59e0b 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Academic and technical projects spanning AI, ML, and software engineering</p>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title"><i class="fab fa-python"></i> Diffusion Models with Classifier-Free Guidance</div>
-                            <div class="project-meta">CS 726: Advanced Machine Learning | Feb'25 - Apr'25 <i class="fab fa-pytorch"></i></div>
-                        </div>
-                        <div class="project-content">
-                            <p class="project-description">Engineered a PyTorch DDPM pipeline with MLP based noise prediction & multiple schedulers across 200-step diffusion</p>
-                            <ul class="project-highlights">
-                                <li>Achieved 95%+ classification accuracy in controllable generation via class-conditioned sampling</li>
-                                <li>Developed a training-free CFG classifier achieving 94.6% average accuracy</li>
-                                <li>Evaluated using EMD and NLL metrics</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag"><i class="fab fa-pytorch"></i> PyTorch</span>
-                                <span class="tag"><i class="fas fa-brain"></i> DDPM</span>
-                                <span class="tag"><i class="fas fa-robot"></i> Classifier-Free Guidance</span>
-                            </div>
+            </section>
+
+            <!-- Publications Page -->
+            <section id="publications" class="page">
+                <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--primary-color);">Publications</h2>
+                <p class="text-center text-gray-500 mb-12">Research in Music Information Retrieval and AI</p>
+                 <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500">
+                        <h4 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">Melodic And Metrical Elements of Expressiveness in Hindustani Vocal Music</h4>
+                        <p class="text-gray-500 text-sm mb-3">Y. Bhake, A. Anand and P. Rao | ISMIR 2025, Daejeon, Korea</p>
+                        <p class="text-gray-600">Research focused on generative modeling in expressive classical music, exploring computational approaches to capture and model melodic and metrical expressiveness in Hindustani vocal traditions.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="tag text-xs font-medium px-3 py-1 rounded-full">Generative Modeling</span>
+                            <span class="tag text-xs font-medium px-3 py-1 rounded-full">Music Information Retrieval</span>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title"><i class="fas fa-robot"></i> LLM Decoding Optimization Strategies</div>
-                            <div class="project-meta">CS 726: Advanced ML | Mar'25 - Apr'25 <i class="fab fa-python"></i></div>
-                        </div>
-                        <div class="project-content">
-                            <p class="project-description">Implemented and benchmarked Greedy, Top-k, Nucleus, and Temperature decoding on 13B params LLaMA-2</p>
-                            <ul class="project-highlights">
-                                <li>Boosted inference throughput with Beam search decoder predicting multiple tokens per step</li>
-                                <li>Evaluated methods using BLEU, ROUGE, and Real Time Factor metrics</li>
-                                <li>Analyzed quality-latency trade-offs across different decoding strategies</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag"><i class="fas fa-robot"></i> LLaMA-2</span>
-                                <span class="tag"><i class="fas fa-cogs"></i> Decoding Strategies</span>
-                                <span class="tag"><i class="fas fa-tachometer-alt"></i> Performance Optimization</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title"><i class="fab fa-rocket"></i> Knowledge Distillation from ResNet-50</div>
-                            <div class="project-meta">CS 419: Introduction to Machine Learning | Feb'24 - May'24 <i class="fab fa-python"></i></div>
-                        </div>
-                        <div class="project-content">
-                            <p class="project-description">Implemented knowledge distillation on CIFAR-10, training a custom CNN student model to mimic a ResNet-50 model</p>
-                            <ul class="project-highlights">
-                                <li>Achieved 15% higher early-epoch accuracy by applying distillation loss</li>
-                                <li>Blended KL divergence and cross-entropy for optimal knowledge transfer</li>
-                                <li>Demonstrated potential for cost-efficient model deployment</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag"><i class="fas fa-brain"></i> Knowledge Distillation</span>
-                                <span class="tag"><i class="fas fa-microchip"></i> CNN</span>
-                                <span class="tag"><i class="fas fa-compress"></i> Model Compression</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title"><i class="fas fa-chart-line"></i> Time Series Forecasting for Stocks</div>
-                            <div class="project-meta">Analytics Club, IITB | Sep'24 - Oct'24 <i class="fab fa-python"></i></div>
-                        </div>
-                        <div class="project-content">
-                            <p class="project-description">Forecasted Tesla stock prices using Time Series analysis with SARIMA, GARCH, VAR and LSTM models</p>
-                            <ul class="project-highlights">
-                                <li>Achieved RMSE of 0.04 using hybrid LSTM and ARIMA model</li>
-                                <li>Combined LSTM for stock prediction and ARIMA for error series</li>
-                                <li>Comprehensive analysis of multiple forecasting approaches</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag"><i class="fas fa-chart-line"></i> Time Series</span>
-                                <span class="tag"><i class="fas fa-brain"></i> LSTM</span>
-                                <span class="tag"><i class="fas fa-rupee-sign"></i> Financial Modeling</span>
-                            </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500">
+                        <h4 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">Expressive Timing in Hindustani Vocal Music</h4>
+                        <p class="text-gray-500 text-sm mb-3">Y. Bhake and P. Rao | WIMAGA, ICASSP 2025, Hyderabad</p>
+                        <p class="text-gray-600">Investigation into quantitative methods for capturing expressive timing in classical Indian music, with applications to computational musicology and generative modeling of musical syncopation.</p>
+                         <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="tag text-xs font-medium px-3 py-1 rounded-full">Expressive Timing</span>
+                            <span class="tag text-xs font-medium px-3 py-1 rounded-full">Computational Musicology</span>
+                             <span class="tag text-xs font-medium px-3 py-1 rounded-full">ICASSP</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="tab-sidequests" class="tab-section" style="display:none; background: linear-gradient(120deg, #1e40af 0%, #f59e0b 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Side Quests</h2>
-                <p class="section-subtitle">Special projects and competitions</p>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Spaceport America Cup</div>
-                            <div class="project-meta">IITB Rocket Team | Dec'22 - Jul'24</div>
+            </section>
+
+            <!-- Experience Page -->
+            <section id="experience" class="page">
+                <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-color);">Professional Experience</h2>
+                <div class="max-w-4xl mx-auto relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-4 top-0 h-full w-0.5 bg-orange-200"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- Experience Item 1 -->
+                        <div class="relative pl-12">
+                           <div class="absolute left-4 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-orange-500 border-4 border-white"></div>
+                           <p class="text-sm font-semibold text-orange-600 mb-1">May'25 - Jul'25</p>
+                           <h3 class="text-xl font-bold">Software Engineering Intern</h3>
+                           <p class="font-medium text-gray-600 mb-2">Deutsche Bank - Cash and Securities Portfolio</p>
+                           <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                               <li>Engineered and delivered production-ready end-to-end user-preferences functionality.</li>
+                               <li>Developed full-stack features using React.js, Java Spring Boot, GraphQL, and PostgreSQL.</li>
+                               <li>Slashed GCP elevated access request time from 1 hour to 2 minutes by automating the pipeline with a Python utility.</li>
+                           </ul>
                         </div>
-                        <div class="project-content">
-                            <p class="project-description">World's largest rocket engineering conference & competition in New Mexico, USA with 150+ institutions and 6k+ global participants</p>
-                            <ul class="project-highlights">
-                                <li>Secured top-20 finish among 156 global teams via 9,210 ft. AGL flight</li>
-                                <li>Presented rocket to 1700+ rocketeers and industry leaders including Blue Origin and Virgin Galactic</li>
-                                <li>Prototyped and fabricated 4+ iterations of thrust vector control nozzle</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag">Propulsion Systems</span>
-                                <span class="tag">Rocket Engineering</span>
-                                <span class="tag">Team Leadership</span>
-                            </div>
+                         <!-- Experience Item 2 -->
+                         <div class="relative pl-12">
+                           <div class="absolute left-4 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-orange-500 border-4 border-white"></div>
+                           <p class="text-sm font-semibold text-orange-600 mb-1">May'24 - Present</p>
+                           <h3 class="text-xl font-bold">Research Assistant</h3>
+                           <p class="font-medium text-gray-600 mb-2">DAPLAB - Prof. Preeti Rao</p>
+                           <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                               <li>Developed a semi-automatic syllable annotation pipeline using Whisper, VAD and a Forced Alignment model.</li>
+                               <li>Devised spectral band-energy (F1 - 0.80) and ΔMFCC (F1 - 0.73) syllable onset detection models.</li>
+                               <li>Applied Word2vec & text match (96% acc.) to measure syllable misalignment for expression analysis.</li>
+                               <li>Generated new variations capturing expressive timing using GMM sampling on processed data.</li>
+                           </ul>
                         </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">iKshana: Accessibility Product</div>
-                            <div class="project-meta">ITC Summer Project | May'23 - Sep'23</div>
-                        </div>
-                        <div class="project-content">
-                            <p class="project-description">Secured 2nd prize among 110+ projects for successfully prototyping an accessibility product for the visually impaired</p>
-                            <ul class="project-highlights">
-                                <li>Prototyped a foot harness integrated with navigation module and haptic feedback</li>
-                                <li>Developed Android app extracting location data for long-range navigation</li>
-                                <li>Focus on improving mobility independence for visually impaired users</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag">Accessibility Technology</span>
-                                <span class="tag">Android Development</span>
-                                <span class="tag">Hardware Integration</span>
-                            </div>
+                        <!-- Experience Item 3 -->
+                        <div class="relative pl-12">
+                           <div class="absolute left-4 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-orange-500 border-4 border-white"></div>
+                           <p class="text-sm font-semibold text-orange-600 mb-1">May'24 - Jul'24</p>
+                           <h3 class="text-xl font-bold">Design Intern</h3>
+                           <p class="font-medium text-gray-600 mb-2">NanoSniff Technologies Pvt. Ltd.</p>
+                           <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                               <li>Designed a device prototype for generating vapor molecules over a combustion sensor for detecting explosives.</li>
+                               <li>Optimized the heating coil orientation and geometry (nested helix) to maximize heating as per specifications.</li>
+                           </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="tab-contact" class="tab-section" style="display:none; background: linear-gradient(120deg, #2563eb 0%, #6b7280 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's connect and explore opportunities for collaboration</p>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <h4>Email</h4>
-                        <a href="mailto:yashbhake1@gmail.com">yashbhake1@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fab fa-github"></i></div>
-                        <h4>GitHub</h4>
-                        <a href="https://github.com/Yash-Bhake" target="_blank">github.com/Yash-Bhake</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                        <h4>LinkedIn</h4>
-                        <a href="https://www.linkedin.com/in/yashbhake/" target="_blank">linkedin.com/in/yashbhake</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-                        <h4>Instagram</h4>
-                        <a href="https://www.instagram.com/yash_bhake/" target="_blank">instagram.com/yash_bhake</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                        <h4>Phone</h4>
-                        <a href="tel:+918369575025">+91 8369575025</a>
-                    </div>
+            </section>
+
+            <!-- Projects Page -->
+            <section id="projects" class="page">
+                 <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--primary-color);">Featured Projects</h2>
+                 <p class="text-center text-gray-500 mb-12">Spanning AI, ML, and Software Engineering</p>
+                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">Diffusion Models with Classifier-Free Guidance</h3>
+                            <p class="text-sm text-gray-500 mb-3">CS 726: Advanced Machine Learning</p>
+                            <p class="text-gray-600 mb-4 text-sm">Engineered a PyTorch DDPM pipeline with MLP based noise prediction & multiple schedulers across 200-step diffusion.</p>
+                             <div class="flex items-center space-x-2 text-gray-500" title="PyTorch">
+                               <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>PyTorch</title><path d="M6.387 1.258a1.29 1.29 0 00-1.252 0C4.347 1.635 2.1 3.235 1.155 6.27c-.452 1.455.142 4.1.84 5.613.3.645.71 1.455.71 1.455s.3.57.785 1.29c.452.645.922 1.215 1.455 1.767 1.252 1.29 2.922 2.235 4.767 2.475 1.065.105 2.13.105 3.2-.03.71-.075 1.36-.264 1.99-.527a.97.97 0 00.564-.452c.225-.375.225-.84.03-1.215l-1.065-2.025a1.23 1.23 0 00-1.02-.6s-.045-.03-.075-.03a1.21 1.21 0 00-.9.45c-.485.645-1.14 1.065-1.875 1.29a3.15 3.15 0 01-2.28-.42c-.675-.485-1.125-1.215-1.32-2.025-.225-.885.03-1.8.6-2.58.56-.78 1.41-1.32 2.325-1.455a3.1 3.1 0 012.025.225c.78.485 1.32 1.29 1.455 2.205.15.915-.15 1.875-.75 2.625-.106.105-.225.225-.3.375a.91.91 0 00-.18.78c.105.345.45.6.84.63h.18c.375 0 .71-.18.9-.485l1.065-1.767c.6-1.02.9-2.13.84-3.3a9.23 9.23 0 00-.78-3.48c-.67-1.56-1.72-2.88-3.07-3.82-1.35-.94-2.92-1.42-4.52-1.42-1.38 0-2.62.33-3.705 1.02A6.4 6.4 0 004.83 5.4c-.675 1.215-.945 2.58-.75 3.975.15 1.17.63 2.28 1.32 3.225.105.15.225.3.375.45.415.485 1.02.84 1.68.9.74.07 1.45-.18 1.95-.67.52-.48.87-1.17.9-1.92.03-.78-.18-1.5-.6-2.13Zm11.226 15.282c-.375-.225-.84-.225-1.215 0a.913.913 0 00-.485.84v.105c0 .375.18.71.485.9.18.105.415.18.63.18.225 0 .45-.075.63-.18.3-.18.485-.525.485-.9v-.105a.913.913 0 00-.525-.84z" fill="#EE4C2C"/></svg>
+                             </div>
+                        </div>
+                     </div>
+                    <!-- Project Card 2 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">LLM Decoding Optimization Strategies</h3>
+                             <p class="text-sm text-gray-500 mb-3">CS 726: Advanced Machine Learning</p>
+                            <p class="text-gray-600 mb-4 text-sm">Implemented and benchmarked Greedy, Top-k, Nucleus, and Temperature decoding on 13B params LLaMA-2.</p>
+                             <div class="flex items-center space-x-2 text-gray-500" title="LLaMA">
+                                <i class="fas fa-robot"></i>
+                             </div>
+                        </div>
+                     </div>
+                    <!-- Project Card 3 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">Knowledge Distillation from ResNet-50</h3>
+                             <p class="text-sm text-gray-500 mb-3">CS 419: Introduction to Machine Learning</p>
+                            <p class="text-gray-600 mb-4 text-sm">Trained a custom CNN student model to mimic a ResNet-50 model, achieving 15% higher early-epoch accuracy.</p>
+                             <div class="flex items-center space-x-2 text-gray-500" title="TensorFlow">
+                                <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>TensorFlow</title><path d="M6.934 4.502c-1.802 1.34-2.83 3.61-2.83 6.065 0 1.832.617 3.58 1.688 4.908l.002.003.003.004c.123.14.25.276.378.41l.245.25c.26.25.52.48.777.705l.89.72c.3.23.59.45.88.66l.002.002.13.09c.28.18.55.35.82.51l.004.002c.27.16.55.3.82.44l.003.002c.26.13.52.25.78.36.2.08.38.16.57.23.32.12.63.24.95.34.22.07.45.14.67.2.28.08.56.15.84.2.14.02.28.04.42.06.3.04.6.07.9.09.15.01.29.02.44.03.3.02.6.03.9.03h.01c.14 0 .29-.01.43-.02.3-.01.6-.03.9-.05.15-.01.29-.02.44-.04.28-.05.56-.12.84-.2.22-.06.45-.13.67-.2.32-.1.63-.22.95-.34.19-.07.37-.15.57-.23.26-.11.52-.23.78-.36l.003-.002c.27-.14.55-.28.82-.44l.004-.002c.27-.16.54-.33.82-.51l.13-.09.002-.001c.29-.21.58-.43.88-.66l.89-.72c.257-.225.517-.455.777-.705l.245-.25c.128-.134.255-.27.378-.41l.003-.004.002-.003c1.07-1.328 1.687-3.076 1.687-4.908 0-2.456-1.028-4.726-2.83-6.065-1.88-1.4-4.28-2.22-6.91-2.22s-5.03.82-6.91 2.22zM12 14.582c-1.46-.86-2.31-2.45-2.31-4.2 0-1.22.42-2.35 1.15-3.21l1.16 2.01 2.31-1.15-2.31-3.99c.33-.05.67-.08 1-.08s.67.03 1 .08l-2.31 3.99 2.31 1.15 1.16-2.01c.73.86 1.15 1.99 1.15 3.21 0 1.75-.85 3.34-2.31 4.2v4.54c1.2-.27 2.33-.77 3.28-1.46L15.4 15.1c-.8.47-1.77.75-2.81.75v-1.27h-.01c-.33 0-.67-.03-1-.08v1.35c-1.04 0-2.01-.28-2.81-.75l-1.12 2.56c.95.69 2.08 1.19 3.28 1.46v-4.54z" fill="#FF6F00"/></svg>
+                             </div>
+                        </div>
+                     </div>
+                    <!-- Project Card 4 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">Time Series Forecasting for Stocks</h3>
+                             <p class="text-sm text-gray-500 mb-3">Analytics Club, IITB</p>
+                            <p class="text-gray-600 mb-4 text-sm">Forecasted Tesla stock prices using Time Series analysis with SARIMA, GARCH, VAR and LSTM models, achieving RMSE of 0.04.</p>
+                             <div class="flex items-center space-x-2 text-gray-500" title="LSTM">
+                               <i class="fas fa-chart-line"></i>
+                             </div>
+                        </div>
+                     </div>
+                 </div>
+            </section>
+
+            <!-- Side Quests Page -->
+            <section id="side-quests" class="page">
+                 <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--primary-color);">Side Quests</h2>
+                 <p class="text-center text-gray-500 mb-12">Adventures beyond the main curriculum</p>
+                 <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                     <!-- Side Quest 1 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">Spaceport America Cup</h3>
+                             <p class="text-sm text-gray-500 mb-3">IITB Rocket Team | World's largest rocket engineering competition</p>
+                             <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                               <li>Secured top-20 finish among 156 global teams via 9,210 ft. AGL flight.</li>
+                               <li>Presented rocket to 1700+ rocketeers and industry leaders including Blue Origin and Virgin Galactic.</li>
+                               <li>Prototyped and fabricated 4+ iterations of thrust vector control nozzle.</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- Side Quest 2 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">iKshana: Accessibility Product</h3>
+                             <p class="text-sm text-gray-500 mb-3">ITC Summer Project | 2nd prize among 110+ projects</p>
+                             <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                               <li>Prototyped a foot harness integrated with navigation module and haptic feedback for the visually impaired.</li>
+                               <li>Developed Android app extracting location data for long-range navigation.</li>
+                               <li>Focused on improving mobility independence for visually impaired users.</li>
+                           </ul>
+                        </div>
+                     </div>
+                 </div>
+            </section>
+
+            <!-- Contact Page -->
+            <section id="contact" class="page">
+                 <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--primary-color);">Get In Touch</h2>
+                 <p class="text-center text-gray-500 mb-12">Let's connect and explore opportunities for collaboration.</p>
+                 <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <a href="mailto:yashbhake1@gmail.com" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                        <i class="fas fa-envelope text-4xl mb-3" style="color: var(--primary-color);"></i>
+                        <h4 class="text-lg font-semibold">Email</h4>
+                        <p class="text-gray-500">yashbhake1@gmail.com</p>
+                    </a>
+                     <a href="https://www.linkedin.com/in/yashbhake/" target="_blank" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                        <i class="fab fa-linkedin text-4xl mb-3" style="color: var(--primary-color);"></i>
+                        <h4 class="text-lg font-semibold">LinkedIn</h4>
+                        <p class="text-gray-500">/in/yashbhake</p>
+                    </a>
+                     <a href="https://github.com/Yash-Bhake" target="_blank" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                        <i class="fab fa-github text-4xl mb-3" style="color: var(--primary-color);"></i>
+                        <h4 class="text-lg font-semibold">GitHub</h4>
+                        <p class="text-gray-500">/Yash-Bhake</p>
+                    </a>
+                     <a href="https://www.instagram.com/yash_bhake/" target="_blank" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                        <i class="fab fa-instagram text-4xl mb-3" style="color: var(--primary-color);"></i>
+                        <h4 class="text-lg font-semibold">Instagram</h4>
+                        <p class="text-gray-500">@yash_bhake</p>
+                    </a>
+                 </div>
+                 <div class="text-center mt-8 bg-white p-6 rounded-lg shadow-md max-w-sm mx-auto">
+                     <i class="fas fa-phone text-4xl mb-3" style="color: var(--primary-color);"></i>
+                     <h4 class="text-lg font-semibold">Phone</h4>
+                     <p class="text-gray-500">+91 8369575025</p>
+                 </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white mt-12">
+            <div class="container mx-auto px-6 py-6 text-center">
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="https://github.com/Yash-Bhake" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="https://www.linkedin.com/in/yashbhake/" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
+                    <a href="mailto:yashbhake1@gmail.com" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-envelope text-2xl"></i></a>
+                    <a href="https://www.instagram.com/yash_bhake/" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
                 </div>
+                <p>&copy; 2024 Yash Bhake. All rights reserved.</p>
+                <p class="text-sm text-gray-500 mt-1">Designed with a passion for AI and Music.</p>
             </div>
-        </section>
+        </footer>
     </div>
-
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://linkedin.com/in/yash-bhake" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yashbhake" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:yash.bhake@iitb.ac.in"><i class="fas fa-envelope"></i></a>
-                <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-            </div>
-            <p>&copy; 2025 Yash Bhake. All rights reserved.</p>
-            <p>Designed with passion for AI research and innovation.</p>
-        </div>
-    </footer>
-
+    
     <script>
-        // Tab navigation logic
-        const tabLinks = document.querySelectorAll('#tab-links a');
-        const tabSections = document.querySelectorAll('.tab-section');
-        tabLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const tab = this.getAttribute('data-tab');
-                tabSections.forEach(section => {
-                    section.style.display = 'none';
-                });
-                document.getElementById('tab-' + tab).style.display = 'block';
-                tabLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const body = document.querySelector('body');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function showPage(pageId, clickedLink, bgClass) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
             });
+            
+            // Show the target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update active nav link
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            if (clickedLink) {
+                 // Find corresponding link in main nav and activate it
+                const mainNavLink = document.querySelector(`.nav-link[onclick*="'${pageId}'"]`);
+                if (mainNavLink) {
+                    mainNavLink.classList.add('active');
+                }
+            }
+            
+            // Update body background
+            body.className = ''; // Clear existing classes
+            body.classList.add(bgClass);
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile menu toggle
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-        // Show Home tab by default
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('tab-home').style.display = 'block';
-            tabLinks[0].classList.add('active');
+
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Set initial state
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home', document.querySelector('.nav-link'), 'bg-theme-home');
         });
     </script>
 </body>
-</html>">About Me</h2>
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="profile-placeholder">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <h3>Bridging AI and Creative Expression</h3>
-                    <p>
-                        I'm a fourth-year student at IIT Bombay pursuing a Minor Degree in Artificial Intelligence and Data Science under C-MInDS. 
-                        My research focuses on computational modeling of expressiveness in Hindustani vocal music, combining my passion for music with cutting-edge AI techniques.
-                    </p>
-                    <p>
-                        With publications in top-tier conferences like ISMIR and ICASSP, I've contributed to the field of Music Information Retrieval through innovative approaches to generative modeling and expressive timing analysis. 
-                        My work has been recognized with the Undergraduate Research Award and author grants.
-                    </p>
-                    <p>
-                        Beyond research, I have industry experience at Deutsche Bank where I developed production-ready software solutions, and I'm actively involved in mentoring and teaching roles at IIT Bombay.
-                    </p>
-                </div>
-            </div>
-            <div class="achievements">
-                <div class="achievement">
-                    <div class="number">2</div>
-                    <p>Publications</p>
-                </div>
-                <div class="achievement">
-                    <div class="number">99.71%</div>
-                    <p>JEE Mains Percentile</p>
-                </div>
-                <div class="achievement">
-                    <div class="number">973</div>
-                    <p>JEE Advanced AIR</p>
-                </div>
-                <div class="achievement">
-                    <div class="number">20+</div>
-                    <p>Students Mentored</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <p class="section-subtitle">Research contributions in Music Information Retrieval and AI</p>
-            
-            <div class="publication-card">
-                <h4>Melodic And Metrical Elements of Expressiveness in Hindustani Vocal Music</h4>
-                <p class="publication-meta">Y. Bhake, A. Anand and P. Rao | ISMIR 2025, Daejeon, Korea</p>
-                <p>Research focused on generative modeling in expressive classical music, exploring computational approaches to capture and model melodic and metrical expressiveness in Hindustani vocal traditions.</p>
-                <div class="publication-tags">
-                    <span class="tag">Generative Modeling</span>
-                    <span class="tag">Music Information Retrieval</span>
-                    <span class="tag">Author Grants</span>
-                </div>
-            </div>
-
-            <div class="publication-card">
-                <h4>Expressive Timing in Hindustani Vocal Music</h4>
-                <p class="publication-meta">Y. Bhake and P. Rao | WIMAGA, ICASSP 2025, Hyderabad</p>
-                <p>Investigation into quantitative methods for capturing expressive timing in classical Indian music, with applications to computational musicology and generative modeling of musical syncopation.</p>
-                <div class="publication-tags">
-                    <span class="tag">Expressive Timing</span>
-                    <span class="tag">Computational Musicology</span>
-                    <span class="tag">ICASSP</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline">
-                
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <div class="experience-title">Software Engineering Intern</div>
-                            <div class="experience-company">Deutsche Bank - Cash and Securities Portfolio</div>
-                        </div>
-                        <div class="experience-duration">May'25 - Jul'25</div>
-                    </div>
-                    <p class="experience-description">Received a Pre-Placement Offer and Letter of Recommendation for exceptional performance and consistent output during the internship</p>
-                    <ul class="experience-highlights">
-                        <li>Engineered and delivered production-ready end-to-end user-preferences functionality refining user experience</li>
-                        <li>Developed full-stack features using React.js, Java Spring Boot, GraphQL, and PostgreSQL learning them on-site</li>
-                        <li>Slashed GCP elevated access request time from 1 hour to 2 minutes by automating the pipeline with Python utility</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <div class="experience-title">Design Intern</div>
-                            <div class="experience-company">NanoSniff Technologies Pvt. Ltd.</div>
-                        </div>
-                        <div class="experience-duration">May'24 - Jul'24</div>
-                    </div>
-                    <p class="experience-description">MEMS fabrication and product R&D organization developing smart electronics through innovative product design</p>
-                    <ul class="experience-highlights">
-                        <li>Designed a device prototype for generating vapor molecules over a combustion sensor for detecting explosives</li>
-                        <li>Optimized the heating coil orientation and geometry (nested helix) maximizing heating as per the specifications</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <div class="experience-title">Research Assistant</div>
-                            <div class="experience-company">DAPLAB - Prof. Preeti Rao</div>
-                        </div>
-                        <div class="experience-duration">May'24 - Present</div>
-                    </div>
-                    <p class="experience-description">Computational modeling of elements of expressiveness in Indian vocal music for generative applications and analysis</p>
-                    <ul class="experience-highlights">
-                        <li>Developed a semi-automatic syllable annotation pipeline using Whisper, VAD and a Forced Alignment model</li>
-                        <li>Devised spectral band-energy (F1 - 0.80) and ΔMFCC (F1 - 0.73) syllable onset detection models</li>
-                        <li>Applied Word2vec & text match (96% acc.) to measure syllable misalignment for expression analysis</li>
-                        <li>Generated new variations capturing expressive timing using GMM sampling on processed data</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Academic and technical projects spanning AI, ML, and software engineering</p>
-            
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Diffusion Models with Classifier-Free Guidance</div>
-                        <div class="project-meta">CS 726: Advanced Machine Learning | Feb'25 - Apr'25</div>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">Engineered a PyTorch DDPM pipeline with MLP based noise prediction & multiple schedulers across 200-step diffusion</p>
-                        <ul class="project-highlights">
-                            <li>Achieved 95%+ classification accuracy in controllable generation via class-conditioned sampling</li>
-                            <li>Developed a training-free CFG classifier achieving 94.6% average accuracy</li>
-                            <li>Evaluated using EMD and NLL metrics</li>
-                        </ul>
-                        <div class="publication-tags">
-                            <span class="tag">PyTorch</span>
-                            <span class="tag">DDPM</span>
-                            <span class="tag">Classifier-Free Guidance</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">LLM Decoding Optimization Strategies</div>
-                        <div class="project-meta">CS 726: Advanced ML | Mar'25 - Apr'25</div>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">Implemented and benchmarked Greedy, Top-k, Nucleus, and Temperature decoding on 13B params LLaMA-2</p>
-                        <ul class="project-highlights">
-                            <li>Boosted inference throughput with Beam search decoder predicting multiple tokens per step</li>
-                            <li>Evaluated methods using BLEU, ROUGE, and Real Time Factor metrics</li>
-                            <li>Analyzed quality-latency trade-offs across different decoding strategies</li>
-                        </ul>
-                        <div class="publication-tags">
-                            <span class="tag">LLaMA-2</span>
-                            <span class="tag">Decoding Strategies</span>
-                            <span class="tag">Performance Optimization</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Spaceport America Cup</div>
-                        <div class="project-meta">IITB Rocket Team | Dec'22 - Jul'24</div>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">World's largest rocket engineering conference & competition in New Mexico, USA with 150+ institutions and 6k+ global participants</p>
-                        <ul class="project-highlights">
-                            <li>Secured top-20 finish among 156 global teams via 9,210 ft. AGL flight</li>
-                            <li>Presented rocket to 1700+ rocketeers and industry leaders including Blue Origin and Virgin Galactic</li>
-                            <li>Prototyped and fabricated 4+ iterations of thrust vector control nozzle</li>
-                        </ul>
-                        <div class="publication-tags">
-                            <span class="tag">Propulsion Systems</span>
-                            <span class="tag">Rocket Engineering</span>
-                            <span class="tag">Team Leadership</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">iKshana: Accessibility Product</div>
-                        <div class="project-meta">ITC Summer Project | May'23 - Sep'23</div>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">Secured 2nd prize among 110+ projects for successfully prototyping an accessibility product for the visually impaired</p>
-                        <ul class="project-highlights">
-                            <li>Prototyped a foot harness integrated with navigation module and haptic feedback</li>
-                            <li>Developed Android app extracting location data for long-range navigation</li>
-                            <li>Focus on improving mobility independence for visually impaired users</li>
-                        </ul>
-                        <div class="publication-tags">
-                            <span class="tag">Accessibility Technology</span>
-                            <span class="tag">Android Development</span>
-                            <span class="tag">Hardware Integration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Knowledge Distillation from ResNet-50</div>
-                        <div class="project-meta">CS 419: Introduction to Machine Learning | Feb'24 - May'24</div>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">Implemented knowledge distillation on CIFAR-10, training a custom CNN student model to mimic a ResNet-50 model</p>
-                        <ul class="project-highlights">
-                            <li>Achieved 15% higher early-epoch accuracy by applying distillation loss</li>
-                            <li>Blended KL divergence and cross-entropy for optimal knowledge transfer</li>
-                            <li>Demonstrated potential for cost-efficient model deployment</li>
-                        </ul>
-                        <div class="publication-tags">
-                            <span class="tag">Knowledge Distillation</span>
-                            <span class="tag">CNN</span>
-                            <span class="tag">Model Compression</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Time Series Forecasting for Stocks</div>
-                        <div class="project-meta">Analytics Club, IITB | Sep'24 - Oct'24</div>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">Forecasted Tesla stock prices using Time Series analysis with SARIMA, GARCH, VAR and LSTM models</p>
-                        <ul class="project-highlights">
-                            <li>Achieved RMSE of 0.04 using hybrid LSTM and ARIMA model</li>
-                            <li>Combined LSTM for stock prediction and ARIMA for error series</li>
-                            <li>Comprehensive analysis of multiple forecasting approaches</li>
-                        </ul>
-                        <div class="publication-tags">
-                            <span class="tag">Time Series</span>
-                            <span class="tag">LSTM</span>
-                            <span class="tag">Financial Modeling</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title
+</html>
