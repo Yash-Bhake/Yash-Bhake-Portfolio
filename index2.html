@@ -551,196 +551,295 @@
     </style>
 </head>
 <body>
-    <!-- Tab Navigation -->
+    <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
             <div class="nav-container">
                 <div class="logo">Yash Bhake</div>
-                <ul class="nav-links" id="tab-links">
-                    <li><a href="#" data-tab="home">Home + About</a></li>
-                    <li><a href="#" data-tab="publications">Publications</a></li>
-                    <li><a href="#" data-tab="experience">Experience</a></li>
-                    <li><a href="#" data-tab="projects">Projects</a></li>
-                    <li><a href="#" data-tab="sidequests">Side Quests</a></li>
-                    <li><a href="#" data-tab="contact">Contact</a></li>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Yash Bhake</h1>
+                <p class="subtitle">AI Researcher & Software Engineer</p>
+                <p class="description">
+                    Fourth-year student at IIT Bombay specializing in Artificial Intelligence, Data Science, and Music Information Retrieval. 
+                    Published researcher with a passion for computational modeling and generative AI applications.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#publications" class="btn btn-primary">View Publications</a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Tabbed Content Sections -->
-    <div id="tab-content">
-        <section id="tab-home" class="tab-section" style="background: linear-gradient(120deg, #2563eb 0%, #f59e0b 100%); min-height: 80vh;">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Yash Bhake</h1>
-                    <p class="subtitle">AI Researcher & Software Engineer</p>
-                    <p class="description">
-                        Fourth-year student at IIT Bombay specializing in Artificial Intelligence, Data Science, and Music Information Retrieval.<br>
-                        Published researcher with a passion for computational modeling and generative AI applications.
-                    </p>
-                </div>
-                <div class="about-grid">
-                    <div class="about-image">
-                        <div class="profile-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <h3>Bridging AI and Creative Expression</h3>
-                        <p>
-                            I'm a fourth-year student at IIT Bombay pursuing a Minor Degree in Artificial Intelligence and Data Science under C-MInDS.<br>
-                            My research focuses on computational modeling of expressiveness in Hindustani vocal music, combining my passion for music with cutting-edge AI techniques.
-                        </p>
-                        <p>
-                            With publications in top-tier conferences like ISMIR and ICASSP, I've contributed to the field of Music Information Retrieval through innovative approaches to generative modeling and expressive timing analysis.<br>
-                            My work has been recognized with the Undergraduate Research Award and author grants.
-                        </p>
-                        <p>
-                            Beyond research, I have industry experience at Deutsche Bank where I developed production-ready software solutions, and I'm actively involved in mentoring and teaching roles at IIT Bombay.
-                        </p>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">SQL</span>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="tab-publications" class="tab-section" style="display:none; background: linear-gradient(120deg, #1e40af 0%, #f8fafc 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Publications</h2>
-                <p class="section-subtitle">Research contributions in Music Information Retrieval and AI</p>
-                <div class="publication-card">
-                    <h4>Melodic And Metrical Elements of Expressiveness in Hindustani Vocal Music</h4>
-                    <p class="publication-meta">Y. Bhake, A. Anand and P. Rao | ISMIR 2025, Daejeon, Korea</p>
-                    <p>Research focused on generative modeling in expressive classical music, exploring computational approaches to capture and model melodic and metrical expressiveness in Hindustani vocal traditions.</p>
-                    <div class="publication-tags">
-                        <span class="tag">Generative Modeling</span>
-                        <span class="tag">Music Information Retrieval</span>
-                        <span class="tag">Author Grants</span>
+                
+                <div class="skill-category">
+                    <h4><i class="fas fa-brain"></i> AI/ML Frameworks</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">NLTK</span>
+                        <span class="skill-tag">Librosa</span>
+                        <span class="skill-tag">Kaldi</span>
+                        <span class="skill-tag">Whisper</span>
                     </div>
                 </div>
-                <div class="publication-card">
-                    <h4>Expressive Timing in Hindustani Vocal Music</h4>
-                    <p class="publication-meta">Y. Bhake and P. Rao | WIMAGA, ICASSP 2025, Hyderabad</p>
-                    <p>Investigation into quantitative methods for capturing expressive timing in classical Indian music, with applications to computational musicology and generative modeling of musical syncopation.</p>
-                    <div class="publication-tags">
-                        <span class="tag">Expressive Timing</span>
-                        <span class="tag">Computational Musicology</span>
-                        <span class="tag">ICASSP</span>
+                
+                <div class="skill-category">
+                    <h4><i class="fas fa-database"></i> Databases & Cloud</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">GraphQL</span>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="tab-experience" class="tab-section" style="display:none; background: linear-gradient(120deg, #f59e0b 0%, #2563eb 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="experience-timeline">
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-title">Software Engineering Intern</div>
-                                <div class="experience-company">Deutsche Bank - Cash and Securities Portfolio</div>
-                            </div>
-                            <div class="experience-duration">May'25 - Jul'25</div>
-                        </div>
-                        <p class="experience-description">Received a Pre-Placement Offer and Letter of Recommendation for exceptional performance and consistent output during the internship</p>
-                        <ul class="experience-highlights">
-                            <li>Engineered and delivered production-ready end-to-end user-preferences functionality refining user experience</li>
-                            <li>Developed full-stack features using React.js, Java Spring Boot, GraphQL, and PostgreSQL learning them on-site</li>
-                            <li>Slashed GCP elevated access request time from 1 hour to 2 minutes by automating the pipeline with Python utility</li>
-                        </ul>
+                
+                <div class="skill-category">
+                    <h4><i class="fas fa-tools"></i> Development Tools</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Spring Boot</span>
                     </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-title">Design Intern</div>
-                                <div class="experience-company">NanoSniff Technologies Pvt. Ltd.</div>
-                            </div>
-                            <div class="experience-duration">May'24 - Jul'24</div>
-                        </div>
-                        <p class="experience-description">MEMS fabrication and product R&D organization developing smart electronics through innovative product design</p>
-                        <ul class="experience-highlights">
-                            <li>Designed a device prototype for generating vapor molecules over a combustion sensor for detecting explosives</li>
-                            <li>Optimized the heating coil orientation and geometry (nested helix) maximizing heating as per the specifications</li>
-                        </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><i class="fas fa-music"></i> Audio & Research</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Praat</span>
+                        <span class="skill-tag">Audacity</span>
+                        <span class="skill-tag">FL Studio</span>
+                        <span class="skill-tag">Music Information Retrieval</span>
+                        <span class="skill-tag">Signal Processing</span>
                     </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-title">Research Assistant</div>
-                                <div class="experience-company">DAPLAB - Prof. Preeti Rao</div>
-                            </div>
-                            <div class="experience-duration">May'24 - Present</div>
-                        </div>
-                        <p class="experience-description">Computational modeling of elements of expressiveness in Indian vocal music for generative applications and analysis</p>
-                        <ul class="experience-highlights">
-                            <li>Developed a semi-automatic syllable annotation pipeline using Whisper, VAD and a Forced Alignment model</li>
-                            <li>Devised spectral band-energy (F1 - 0.80) and ΔMFCC (F1 - 0.73) syllable onset detection models</li>
-                            <li>Applied Word2vec & text match (96% acc.) to measure syllable misalignment for expression analysis</li>
-                            <li>Generated new variations capturing expressive timing using GMM sampling on processed data</li>
-                        </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><i class="fas fa-cogs"></i> Engineering Software</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">SOLIDWORKS</span>
+                        <span class="skill-tag">Ansys</span>
+                        <span class="skill-tag">CAD Design</span>
+                        <span class="skill-tag">3D Modeling</span>
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="tab-projects" class="tab-section" style="display:none; background: linear-gradient(120deg, #6b7280 0%, #f59e0b 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Academic and technical projects spanning AI, ML, and software engineering</p>
-                <!-- ...existing code for projects (to be filled in next steps)... -->
-            </div>
-        </section>
-        <section id="tab-sidequests" class="tab-section" style="display:none; background: linear-gradient(120deg, #1e40af 0%, #f59e0b 100%); min-height: 80vh;">
-            <div class="container">
-                <h2 class="section-title">Side Quests</h2>
-                <p class="section-subtitle">Special projects and competitions</p>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Spaceport America Cup</div>
-                            <div class="project-meta">IITB Rocket Team | Dec'22 - Jul'24</div>
-                        </div>
-                        <div class="project-content">
-                            <p class="project-description">World's largest rocket engineering conference & competition in New Mexico, USA with 150+ institutions and 6k+ global participants</p>
-                            <ul class="project-highlights">
-                                <li>Secured top-20 finish among 156 global teams via 9,210 ft. AGL flight</li>
-                                <li>Presented rocket to 1700+ rocketeers and industry leaders including Blue Origin and Virgin Galactic</li>
-                                <li>Prototyped and fabricated 4+ iterations of thrust vector control nozzle</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag">Propulsion Systems</span>
-                                <span class="tag">Rocket Engineering</span>
-                                <span class="tag">Team Leadership</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">iKshana: Accessibility Product</div>
-                            <div class="project-meta">ITC Summer Project | May'23 - Sep'23</div>
-                        </div>
-                        <div class="project-content">
-                            <p class="project-description">Secured 2nd prize among 110+ projects for successfully prototyping an accessibility product for the visually impaired</p>
-                            <ul class="project-highlights">
-                                <li>Prototyped a foot harness integrated with navigation module and haptic feedback</li>
-                                <li>Developed Android app extracting location data for long-range navigation</li>
-                                <li>Focus on improving mobility independence for visually impaired users</li>
-                            </ul>
-                            <div class="publication-tags">
-                                <span class="tag">Accessibility Technology</span>
-                                <span class="tag">Android Development</span>
-                                <span class="tag">Hardware Integration</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="tab-contact" class="tab-section" style="display:none;">
-            <!-- Contact content goes here -->
-        </section>
-    </div>
+        </div>
+    </section>
 
+    <!-- Leadership Section -->
+    <section id="leadership" class="publications">
+        <div class="container">
+            <h2 class="section-title">Leadership & Mentorship</h2>
+            <p class="section-subtitle">Positions of responsibility and community contributions</p>
+            
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Institute Student Mentor & Department Academic Mentor</div>
+                            <div class="experience-company">SMP, IIT Bombay</div>
+                        </div>
+                        <div class="experience-duration">Jul'25 - Present</div>
+                    </div>
+                    <p class="experience-description">Selected out of 350+ students as part of mentorship team through extensive interviews & peer reviews</p>
+                    <ul class="experience-highlights">
+                        <li>Mentoring 12 freshmen & 6 sophomores, providing counsel and ensuring academic well-being</li>
+                        <li>Contributing towards ideation, management and execution of core & research events</li>
+                        <li>Acting as first point of contact between faculty, institute functionaries and students</li>
+                    </ul>
+                </div>
 
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Cultural Summer Project Mentor</div>
+                            <div class="experience-company">RagaVerse - Computational Musicology</div>
+                        </div>
+                        <div class="experience-duration">Jul'25 - Aug'25</div>
+                    </div>
+                    <p class="experience-description">Spearheaded technical project on clustering ragas and classical songs by performing ablative feature engineering</p>
+                    <ul class="experience-highlights">
+                        <li>Developed robust computational pipeline, documentation and open-source utilities on GitHub</li>
+                        <li>Taught computational musicology and MIR fundamentals to IITB alumni, PhD scholars, and undergrads</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Seasons of Code Mentor</div>
+                            <div class="experience-company">MusGen - Music Generation using Deep Learning</div>
+                        </div>
+                        <div class="experience-duration">May'24 - Aug'24</div>
+                    </div>
+                    <p class="experience-description">Mentored 8 students on machine learning in audio processing with structured learning curve</p>
+                    <ul class="experience-highlights">
+                        <li>Pre-processed 5436 Deutsche folk songs and converted MIDI audio into one-hot-encoded representation</li>
+                        <li>Taught students to train LSTM network in TensorFlow, achieving 87% training accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Teaching Assistant</div>
+                            <div class="experience-company">MS 101: Makerspace</div>
+                        </div>
+                        <div class="experience-duration">Jul'23 - Dec'23</div>
+                    </div>
+                    <p class="experience-description">Provided mentorship to 30+ freshmen in development of automated tensile testing machines</p>
+                    <ul class="experience-highlights">
+                        <li>Aided freshers in planning, design, fabrication, assembly, and debugging of their first hands-on project</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Achievements</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Undergraduate Research Award 1</div>
+                        <div class="project-meta">IIT Bombay | 2025</div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">Awarded for significant contribution in Music Information Retrieval and audio processing research</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">JEE Advanced AIR 973</div>
+                        <div class="project-meta">Among 150,000+ candidates | 2022</div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">Secured All India Rank 973 in Joint Entrance Examination Advanced</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">JEE Mains 99.71 Percentile</div>
+                        <div class="project-meta">Among 1 million+ candidates | 2022</div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">Achieved 99.71 percentile in Joint Entrance Examination Mains</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">MHT-CET Top 0.01%</div>
+                        <div class="project-meta">99.99 Percentile | 2022</div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">Ranked in top 0.01% among 300,000+ candidates across Maharashtra</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Spaceport America Cup Top 20</div>
+                        <div class="project-meta">Among 156 global teams | 2024</div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">Secured top-20 finish via 9,210 ft. AGL flight, lifting team placement by 66% YoY</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Hindi Poetry Writing - 1st Prize</div>
+                        <div class="project-meta">Rotary Club New Bombay</div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">Achieved first prize in Hindi poetry writing competition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's connect and explore opportunities for collaboration</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <a href="mailto:yash.bhake@example.com">yash.bhake@iitb.ac.in</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h4>LinkedIn</h4>
+                    <a href="https://linkedin.com/in/yash-bhake" target="_blank">linkedin.com/in/yash-bhake</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h4>GitHub</h4>
+                    <a href="https://github.com/yashbhake" target="_blank">github.com/yashbhake</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Google Scholar</h4>
+                    <a href="#" target="_blank">View Publications</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -757,25 +856,91 @@
     </footer>
 
     <script>
-        // Tab navigation logic
-        const tabLinks = document.querySelectorAll('#tab-links a');
-        const tabSections = document.querySelectorAll('.tab-section');
-        tabLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const tab = this.getAttribute('data-tab');
-                tabSections.forEach(section => {
-                    section.style.display = 'none';
-                });
-                document.getElementById('tab-' + tab).style.display = 'block';
-                tabLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-        // Show Home tab by default
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('tab-home').style.display = 'block';
-            tabLinks[0].classList.add('active');
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Add fade-in animation to sections when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function typing() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                }
+            }
+            typing();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            const heroTitle = document.querySelector('.hero-content h1');
+            if (heroTitle) {
+                typeWriter(heroTitle, 'Yash Bhake', 150);
+            }
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card, .publication-card, .experience-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add click handlers for CTA buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Add a small animation effect
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 100);
+            });
         });
     </script>
 </body>
