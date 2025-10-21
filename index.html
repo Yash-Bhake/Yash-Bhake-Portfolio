@@ -146,6 +146,7 @@
 
             <!-- Home Page -->
             <section id="home" class="page active">
+                <!-- Hero Section -->
                 <div class="flex flex-col md:flex-row items-center min-h-[70vh]">
                      <div class="md:w-3/5 text-center md:text-left">
                         <h1 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">Yash Bhake</h1>
@@ -164,31 +165,32 @@
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- About Page -->
-            <section id="about" class="page">
-                <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-color);">About Me</h2>
-                 <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/3 text-center">
-                        <div class="w-60 h-60 mx-auto rounded-full overflow-hidden">
-                            <img src="profilepic2.png" alt="Profile Picture" class="w-full h-full object-cover">
+                <!-- About Section Content -->
+                <div class="pt-24 pb-12">
+                    <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-color);">About Me</h2>
+                     <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/3 text-center">
+                            <div class="w-60 h-60 mx-auto rounded-full overflow-hidden">
+                                <img src="profilepic2.png" alt="Profile Picture" class="w-full h-full object-cover">
+                            </div>
                         </div>
-                    </div>
-                    <div class="md:w-2/3">
-                        <h3 class="text-3xl font-bold mb-4" style="color: var(--secondary-color);">Bridging Technology and Creative Expression</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
-                            I'm a fourth-year student at IIT Bombay, majoring in Mechanical Engineering with a Minor in Artificial Intelligence and Data Science. I’ve always been fascinated by the possibilities that emerging technologies bring. 
-                            My curiosity deepened when I came across the problem of generating aesthetics using AI—it truly captured my imagination. I’m also an ardent fan of music, especially classical art forms, and my goal is to bring these 
-                            traditions into the computational landscape by exploring ways to understand and model them for deeper research and creative generative applications.
-                        </p>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
-                            With publications in conferences like ISMIR and ICASSP, I've contributed to the field of Music Information Retrieval through innovative approaches to generative modeling and expressive timing analysis. 
-                        </p>
-                        <p class="text-gray-600 leading-relaxed">
-                            I am a creative problem solver with a strong commitment to making a positive impact. I resonate with design principles and bring a mindset focused on iterative innovation and collaboration. I'm
-                            Always eager to connect with people who share a passion for bringing technology to unexplored domains, engineering and music. Excited to connect, whether it’s opportunities, ideas, or meaningful conversations.
-                        </p>
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-bold mb-4" style="color: var(--secondary-color);">Bridging Technology and Creative Expression</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                I'm a fourth-year student at IIT Bombay, majoring in Mechanical Engineering with a Minor in Artificial Intelligence and Data Science. I’ve always been fascinated by the possibilities that emerging technologies bring. 
+                                My curiosity deepened when I came across the problem of generating aesthetics using AI—it truly captured my imagination. I’m also an ardent fan of music, especially classical art forms, and my goal is to bring these 
+                                traditions into the computational landscape by exploring ways to understand and model them for deeper research and creative generative applications.
+                            </p>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                With publications in conferences like ISMIR and ICASSP, I've contributed to the field of Music Information Retrieval through innovative approaches to generative modeling and expressive timing analysis. 
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                I am a creative problem solver with a strong commitment to making a positive impact. I resonate with design principles and bring a mindset focused on iterative innovation and collaboration. I'm
+                                Always eager to connect with people who share a passion for bringing technology to unexplored domains, engineering and music. Excited to connect, whether it’s opportunities, ideas, or meaningful conversations.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -313,6 +315,50 @@
                      </div>
                  </div>
             </section>
+
+            <!-- Side Quests Page -->
+            <section id="side-quests" class="page">
+                 <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--primary-color);">Side Quests</h2>
+                 <p class="text-center text-gray-500 mb-12">Adventures beyond the main curriculum</p>
+                 <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                     <!-- Side Quest 1 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">Spaceport America Cup</h3>
+                             <p class="text-sm text-gray-500 mb-3">IITB Rocket Team | World's largest rocket engineering competition</p>
+                             <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                               <li>Secured top-20 finish among 156 global teams via 9,210 ft. AGL flight.</li>
+                               <li>Presented rocket to 1700+ rocketeers and industry leaders including Blue Origin and Virgin Galactic.</li>
+                               <li>Prototyped and fabricated 4+ iterations of thrust vector control nozzle.</li>
+                           </ul>
+                        </div>
+                        <div class="bg-orange-50 h-48 flex items-center justify-center border-t border-orange-200">
+                            <div class="text-center text-orange-400">
+                                <i class="fas fa-image text-4xl"></i>
+                                <p class="text-sm mt-2">Image Coming Soon</p>
+                            </div>
+                        </div>
+                     </div>
+                     <!-- Side Quest 2 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                         <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--secondary-color);">iKshana: Accessibility Product</h3>
+                             <p class="text-sm text-gray-500 mb-3">ITC Summer Project | 2nd prize among 110+ projects</p>
+                             <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                               <li>Prototyped a foot harness integrated with navigation module and haptic feedback for the visually impaired.</li>
+                               <li>Developed Android app extracting location data for long-range navigation.</li>
+                               <li>Focused on improving mobility independence for visually impaired users.</li>
+                           </ul>
+                        </div>
+                        <div class="bg-orange-50 h-48 flex items-center justify-center border-t border-orange-200">
+                            <div class="text-center text-orange-400">
+                                <i class="fas fa-image text-4xl"></i>
+                                <p class="text-sm mt-2">Image Coming Soon</p>
+                            </div>
+                        </div>
+                     </div>
+                 </div>
+            </section>            
 
             <!-- Resume Page -->
             <section id="resume" class="page">
